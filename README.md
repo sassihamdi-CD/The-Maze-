@@ -37,7 +37,7 @@ Differentiate wall colors based on their orientation (NORTH/SOUTH vs. EAST/WEST)
 
 #### Example
 
-[Include an illustrative image or code snippet]
+![overview](photo/Orientation.gif)
 
 ... (Continue documenting other tasks similarly)
 

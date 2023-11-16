@@ -23,7 +23,7 @@ Create a window with SDL2 and implement raycasting to draw walls.
 
 #### Example
 
-[Include an illustrative image or code snippet]
+![overview](photo/overview.png)
 
 ### 1. Orientation
 

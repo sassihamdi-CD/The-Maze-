@@ -5,6 +5,55 @@
 Welcome to the Maze project, an exciting 3D game development journey using raycasting. The project unfolds progressively through different tasks, each adding unique features to create an immersive gaming experience.
 
 
+## About SDL2
+Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D. It is used by video playback software, emulators, and popular games including Valve's award winning catalog and many Humble Bundle games.
+
+
+## Installation
+
+To get started with The Maze, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   $ git clone https://github.com/sassihamdi-CD/The-Maze.git
+
+
+## Usage
+
+To run The Maze, follow these instructions:
+
+1. Execute the following command in the terminal:
+
+    ```bash
+    ./maze
+    ```
+
+    Alternatively, you can use the following command if you have `make` installed:
+
+    ```bash
+    make run
+    ```
+
+2. Use the following keys to navigate and interact in the game:
+
+   - **Move forward/backward:** Up and down arrow keys (W and S also work).
+   - **Turn the camera:** Right and left arrow keys (D and A also work).
+
+Feel free to explore The Maze using these controls!
+
+## Compilation
+
+If you need to recompile the project, use the following command:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags` `sdl2-config --libs`
+```
+### Flowchart
+
+![overview](photo/flowchart.png)
+
+
 ### General
 
 ### Tasks

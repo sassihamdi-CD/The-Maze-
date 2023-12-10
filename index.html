@@ -47,48 +47,14 @@
             line-height: 1.6;
         }
 
-        #cta {
-            background-color: #2ecc71;
-            color: #fff;
-            padding: 60px 0;
-        }
-
-        #cta a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #fff;
-            color: #2ecc71;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        #cta a:hover {
-            background-color: #eee;
-        }
-
+        #cta,
         #github {
-            background-color: #34495e;
-            color: #fff;
             padding: 60px 0;
         }
 
+        #cta a,
         #github a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #fff;
-            color: #34495e;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            border-radius: 5px;
             margin-top: 20px;
-        }
-
-        #github a:hover {
-            background-color: #eee;
         }
 
         footer {
@@ -96,15 +62,54 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
         }
 
         .game-image {
             max-width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            header {
+                padding: 40px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            section {
+                padding: 30px 10px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            section p {
+                font-size: 1em;
+            }
+
+            #cta,
+            #github {
+                padding: 40px 0;
+            }
+
+            #cta a,
+            #github a {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            footer {
+                padding: 10px 0;
+            }
         }
     </style>
 </head>
@@ -162,28 +167,8 @@
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Email: your@email.com</p>
-    </section>
+       
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2023 Your Maze Game</p>
-    </footer>
-
-    <script>
-        function toggleSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-
-            // Show the selected section
-            const selectedSection = document.getElementById(sectionId);
-            if (selectedSection) {
-                selectedSection.style.display = 'block';
-            }
-        }
     </script>
 
 </body>

@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Maze Game Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=" crossorigin="anonymous" />
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f8f8f8;
             color: #333;
         }
 
@@ -99,6 +100,12 @@
             width: 100%;
             bottom: 0;
         }
+
+        .game-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
@@ -116,6 +123,7 @@
 
     <!-- Header Section -->
     <header>
+        <i class="fas fa-gamepad fa-3x"></i>
         <h1>Your Maze Game</h1>
         <p>Experience the thrill of navigating through challenging mazes!</p>
     </header>
@@ -123,41 +131,38 @@
     <!-- Project Overview Section -->
     <section id="project-overview">
         <h2>Project Overview</h2>
-        <p>Provide a brief overview of your maze game and its key features.</p>
+        <p>Embark on a journey through intricate mazes with our thrilling maze game. Discover challenging levels, engaging gameplay, and much more!</p>
     </section>
 
     <!-- Developer Story Section -->
     <section id="developer-story">
         <h2>Developer Story</h2>
-        <p>Discuss your passion for game development and what inspired you to create this maze game.</p>
+        <p>As a passionate game developer, I set out to create an immersive maze game that combines excitement and strategy. Join me on this adventure!</p>
     </section>
 
     <!-- Screenshots or Gameplay Video Section -->
     <section id="gameplay">
         <h2>Gameplay</h2>
-        <!-- Include screenshots or a video showcasing the gameplay -->
-        <!-- Example: <img src="screenshot1.jpg" alt="Screenshot 1"> -->
+        <img class="game-image" src="https://source.unsplash.com/800x400/?maze" alt="Gameplay Screenshot 1">
+        <!-- Add more screenshots or a video here -->
     </section>
 
     <!-- Call-to-Action (CTA) Section -->
     <section id="cta">
         <h2>Play Now</h2>
-        <!-- Add a prominent CTA button to play the game -->
-        <!-- Example: <a href="#" class="cta-button">Play Now</a> -->
+        <a href="#" class="cta-button">Start Playing</a>
     </section>
 
     <!-- GitHub Section -->
     <section id="github">
         <h2>Explore on GitHub</h2>
-        <!-- Include a button or link to your GitHub repository -->
-        <!-- Example: <a href="https://github.com/yourusername/your-maze-game" target="_blank" class="github-link">GitHub</a> -->
+        <a href="https://github.com/yourusername/your-maze-game" target="_blank" class="github-link">GitHub Repository</a>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <!-- Include a form or provide contact information -->
-        <!-- Example: <p>Email: your@email.com</p> -->
+        <p>Email: your@email.com</p>
     </section>
 
     <!-- Footer Section -->
@@ -184,4 +189,3 @@
 </body>
 
 </html>
-

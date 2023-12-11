@@ -1,1 +1,758 @@
-<h1>sassi</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Maze Game Landing Page</title>
+    <!-- Font Awesome CSS -->
+    <link <link rel="stylesheet" href="./css/all.min.css" />
+
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        color: #333;
+      }
+
+      header {
+        position: relative;
+        height: 400px; /* Adjust the height as needed */
+        background-image: url("photo/movie.184x123.jpg");
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 50px;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+      }
+
+      header p {
+        font-size: 1.2em;
+        margin-top: 150px;
+      }
+
+      nav {
+        text-align: center;
+        background-color: #2c3e50;
+        padding: 15px 0;
+      }
+
+      nav a {
+        color: #ecf0f1;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 1.2em;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav a:hover {
+        background-color: #3498db;
+        color: #fff;
+      }
+
+      section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      section h2 {
+        color: #3498db;
+      }
+
+      section p {
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      #cta,
+      #github {
+        padding: 60px 0;
+      }
+
+      #cta a,
+      #github a {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 15px 30px;
+        background-color: #fff;
+        color: #2ecc71;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2em;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      #cta a:hover,
+      #github a:hover {
+        background-color: #2ecc71;
+        color: #fff;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .game-image {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Styles */
+      @media screen and (max-width: 600px) {
+        header h1 {
+          font-size: 2em;
+        }
+
+        header p {
+          font-size: 1em;
+        }
+
+        section {
+          padding: 30px 10px;
+        }
+
+        section h2 {
+          font-size: 1.5em;
+        }
+
+        section p {
+          font-size: 1em;
+        }
+
+        #cta,
+        #github {
+          padding: 40px 0;
+        }
+
+        #cta a,
+        #github a {
+          padding: 10px 20px;
+          font-size: 1em;
+        }
+
+        footer {
+          padding: 10px 0;
+        }
+      }
+
+      #project-overview {
+        background-color: #daeaee;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      #project-overview h2 {
+        color: #323536;
+      }
+
+      #project-overview p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        color: #4d4545;
+        margin-bottom: 40px;
+      }
+
+      .overview-cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .overview-card {
+        max-width: 300px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .overview-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .overview-card i {
+        color: #3498db;
+        margin-bottom: 15px;
+      }
+
+      .overview-card h3 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+      .overview-card p {
+        color: #666;
+        font-size: 1.1em;
+        line-height: 1.5;
+      }
+
+      /* Add this to your existing styles or in the head section of your HTML */
+
+      #gameplay {
+        background-color: #2c3e50; /* Add your preferred background color */
+        color: #fff;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      #gameplay .section-header {
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      #gameplay h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+      }
+
+      #gameplay p {
+        font-size: 1.3em;
+        line-height: 1.6;
+        margin-bottom: 40px;
+      }
+
+      .gameplay-cards {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .gameplay-card {
+        max-width: 300px;
+        background-color: #34495e; /* Add your preferred card background color */
+        border: 1px solid #2c3e50;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .gameplay-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .gameplay-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+      }
+
+      .gameplay-card h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .gameplay-card p {
+        font-size: 1.1em;
+        line-height: 1.5;
+      }
+
+      #github {
+        background-color: x#daeaee;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      #github .section-header {
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      #github h2 {
+        font-size: 2.5em;
+        color: #181b1d;
+        margin-bottom: 10px;
+      }
+
+      #github p {
+        font-size: 1.3em;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 40px;
+      }
+
+      .github-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .github-info {
+        max-width: 300px;
+        background-color: #ecf0f1;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .github-info:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .github-info i {
+        color: #3498db;
+        margin-bottom: 15px;
+      }
+
+      .github-info h3 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .github-info p {
+        font-size: 1.1em;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .github-link {
+        display: block;
+        background-color: #21262a;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .github-link:hover {
+        background-color: #2980b9;
+      }
+
+      /* Add this to your existing styles or in the head section of your HTML */
+
+      #developer-story {
+        background-color: #f8f8f8;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      #developer-story .section-header {
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      #developer-story h2 {
+        font-size: 2.5em;
+        color: #383e42;
+        margin-bottom: 10px;
+      }
+
+      #developer-story p {
+        font-size: 1.3em;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 40px;
+      }
+
+      .story-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .story-text {
+        max-width: 600px;
+        text-align: left;
+      }
+
+      .story-image img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+
+      .story-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      #contact {
+        background-color: #daeaee;
+        color: #383838;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      #contact .section-header {
+        max-width: 600px;
+        margin: 0 auto 40px;
+      }
+
+      #contact h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #3c3c3c;
+      }
+
+      #contact p {
+        font-size: 1.3em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .contact-form {
+        max-width: 400px;
+        text-align: left;
+      }
+
+      .contact-form label {
+        display: block;
+        font-size: 1.2em;
+        margin-bottom: 8px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+      }
+
+      .contact-form button {
+        background-color: #fff;
+        color: #000000;
+        font-size: 1.2em;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+
+      .contact-form button:hover {
+        background-color: #1c1f1f;
+        color: #fff;
+      }
+
+      .social-links {
+        max-width: 200px;
+      }
+
+      .social-links p {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+
+      .social-links a {
+        color: #272525;
+        text-decoration: none;
+        margin-right: 15px;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .social-links a:hover {
+        color: #77c8dc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation Section -->
+    <nav>
+      <a href="#" onclick="toggleSection('project-overview')">Overview</a>
+      <a href="#" onclick="toggleSection('developer-story')">Developer</a>
+      <a href="#" onclick="toggleSection('gameplay')">Gameplay</a>
+      <a href="#" onclick="toggleSection('cta')">Play Now</a>
+      <a href="#" onclick="toggleSection('github')">GitHub</a>
+      <a href="#" onclick="toggleSection('contact')">Contact</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+      <i class="fas fa-gamepad fa-3x"></i>
+      <p>
+        Embark on a journey through intricate mazes with our thrilling game.
+      </p>
+    </header>
+
+    <!-- Project Overview Section -->
+    <section id="project-overview">
+      <h2>Project Overview</h2>
+      <p>
+        Embark on a thrilling journey through a maze of challenges with our maze
+        game. Here's a glimpse of what awaits you:
+      </p>
+
+      <div class="overview-cards">
+        <!-- Feature 1 -->
+        <div class="overview-card">
+          <i class="fas fa-cogs fa-3x"></i>
+          <h3>Challenging Mazes</h3>
+          <p>
+            Explore a variety of intricately designed mazes that will test your
+            problem-solving skills.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="overview-card">
+          <i class="fas fa-puzzle-piece fa-3x"></i>
+          <h3>Engaging Puzzles</h3>
+          <p>
+            Immerse yourself in mind-bending puzzles that require both wit and
+            strategy to solve.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="overview-card">
+          <i class="fas fa-trophy fa-3x"></i>
+          <h3>Achievements</h3>
+          <p>
+            Earn achievements as you progress, showcasing your mastery of the
+            maze challenges.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gameplay Section -->
+    <section id="gameplay">
+      <div class="section-header">
+        <h2>Gameplay</h2>
+        <p>
+          Experience the excitement of navigating challenging mazes. Here's a
+          sneak peek into the gameplay:
+        </p>
+      </div>
+
+      <div class="gameplay-cards">
+        <!-- Gameplay Card 1 -->
+        <div class="gameplay-card">
+          <img src="photo/1.png" alt="Gameplay Screenshot 1" />
+          <h3>Exploration</h3>
+          <p>
+            Explore intricate mazes filled with twists and turns, uncovering
+            hidden paths and challenges.
+          </p>
+        </div>
+
+        <!-- Gameplay Card 2 -->
+        <div class="gameplay-card">
+          <img src="photo/2.jpeg" alt="Gameplay Screenshot 2" />
+          <h3>Strategy</h3>
+          <p>
+            Strategize your moves to overcome obstacles, solve puzzles, and
+            reach the maze's center.
+          </p>
+        </div>
+
+        <!-- Gameplay Card 3 -->
+        <div class="gameplay-card">
+          <img src="photo/3.jpg" alt="Gameplay Screenshot 3" />
+          <h3>Achievements</h3>
+          <p>
+            Unlock achievements as you progress, showcasing your skills in maze
+            navigation and problem-solving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github">
+      <div class="section-header">
+        <h2>GitHub Repository</h2>
+        <p>
+          Explore the code, contribute, and stay updated with the latest
+          developments on GitHub:
+        </p>
+      </div>
+
+      <div class="github-content">
+        <div class="github-info">
+          <i class="fab fa-github fa-4x"></i>
+          <h3>Repository</h3>
+          <p>
+            Check out the source code, report issues, and contribute on GitHub.
+          </p>
+          <a
+            href="https://github.com/sassihamdi-CD/The-Maze-"
+            target="_blank"
+            class="github-link"
+            >Visit Repository</a
+          >
+        </div>
+
+        <div class="github-info">
+          <i class="fas fa-code-branch fa-4x"></i>
+          <h3>Contributions</h3>
+          <p>
+            Join the development, submit pull requests, and be part of the
+            project's growth.
+          </p>
+          <a
+            href="https://github.com/sassihamdi-CD/The-Maze-/blob/master/CONTRIBUTIONS"
+            target="_blank"
+            class="github-link"
+            >View Contributors</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Developer Story Section -->
+    <section id="developer-story">
+      <div class="section-header">
+        <h2>Developer Story</h2>
+        <p>
+          Learn about my journey as a software engineer and the inspiration
+          behind the creation of this maze game.
+        </p>
+      </div>
+
+      <div class="story-content">
+        <div class="story-text">
+          <p>
+            Hi, I'm Sassi Hamdi, a passionate software engineer with a love for
+            creating interactive experiences. My journey into the world of
+            coding started...
+          </p>
+          <p>...</p>
+          <p>
+            Now, I'm excited to share my maze game with you. It's a culmination
+            of my skills, creativity, and dedication to providing a thrilling
+            gaming experience.
+          </p>
+        </div>
+
+        <div class="story-image">
+          <img
+            src="photo/280662617_137017488916651_5671620719174013283_n.jpg"
+            alt="Developer Story Image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <h2>Contact Me</h2>
+        <p>
+          Feel free to reach out for collaboration, questions, or just to say
+          hello!
+        </p>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-form">
+          <form action="#" method="post">
+            <label for="name">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="John Doe"
+              required
+            />
+
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john@example.com"
+              required
+            />
+
+            <label for="message">Your Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Type your message here..."
+              required
+            ></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+
+        <div class="social-links">
+          <p>Connect with me:</p>
+          <a href="https://www.linkedin.com/in/sassi-hamdi/" target="_blank">
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a href="https://github.com/sassihamdi-CD" target="_blank">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="https://twitter.com/Sassi_Hamdi_" target="_blank">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+          <a href="hamdysassy7@email.com">
+            <i class="fas fa-envelope fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <p>&copy; 2023 Your Maze Game</p>
+    </footer>
+
+    <script>
+      function toggleSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          section.style.display = "none";
+        });
+
+        // Show the selected section
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+          selectedSection.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
